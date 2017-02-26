@@ -21,7 +21,7 @@ Template.body.helpers({
             return Tasks.find({}, { sort: { createdAt: -1 } });
     },
     incompleteCount() {
-        return tasks.find({ checked: { $ne: true } }) .count();
+        return Tasks.find({ checked: { $ne: true } }) .count();
     },
 });
 
@@ -45,6 +45,6 @@ Template.body.events({
     },
 
     'change .hide-completed input' (event, instance) {
-        instance.state.set('hidecompleted', event.target.checked);
+        instance.state.set('hideCompleted', event.target.checked);
     },
 });
